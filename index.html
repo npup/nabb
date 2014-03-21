@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+  <head>
+    <meta charset="utf-8">
+    <title>box på näbb</title>
+    <link rel="stylesheet" href="box.css">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <h1>BOX PÅ NÄBB!!!</h1>
+      <img src="box.png" alt="box" id="box">
+      <button id="button" onclick="Box.hurtMe();">BOX</button>
+    </div>
+    <script src="box.js"></script>
+
+    <script>
+      ;(function () {
+        var images = {}, doc = document
+          , box = new Image, nabb = new Image;
+        box.onload = function () {images.box = box; check();};
+        nabb.onload = function () {images.nabb = nabb; check();};
+        box.src = "box.png";
+        nabb.src = "nabb.png";
+        function check() {
+          ("box" in images && "nabb" in images && setTimeout(Box.hurtMe, 1000));
+        }
+      }());
+    </script>
+  </body>
+
+</html>
